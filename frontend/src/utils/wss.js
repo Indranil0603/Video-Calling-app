@@ -3,14 +3,11 @@ import store from "../store/store";
 import { setRoomId, setParticipants, setSocketId } from "../store/actions";
 import { appendNewMessageToChatHistory } from "./directMessages";
 import * as webRTCHandler from "./webRTCHandler";
-// import { config } from "dotenv";
-// config();
-const SERVER = "http://localhost:5002";
 
-// const SERVER =
-// 	process.env.NODE_ENV === "production"
-// 		? process.env.SERVER_ADDRESS_HOSTED
-// 		: process.env.SERVER_ADDRESS_LOCAL;
+const SERVER =
+	process.env.NODE_ENV === "production"
+		? process.env.REACT_APP_SERVER_ADDRESS_HOSTED
+		: process.env.REACT_APP_SERVER_ADDRESS_LOCAL;
 
 let socket = null;
 

@@ -3,9 +3,7 @@ import store from "../store/store";
 import { fetchTURNCredentials, getTurnIceServers } from "./turn";
 import * as wss from "./wss";
 import Peer from "simple-peer";
-// import { config } from "dotenv";
 
-// config();
 const defaultConstraints = {
 	audio: true,
 	video: {
@@ -59,7 +57,7 @@ const getConfiguration = () => {
 		return {
 			iceServers: [
 				{
-					urls: "stun:stun.l.google.com:19302",
+					urls: process.env.REACT_APP_STUN_SERVER_GOOGLE,
 				},
 				...turnIceServers
 			],
@@ -69,7 +67,7 @@ const getConfiguration = () => {
 		return {
 			iceServers: [
 				{
-					urls: "stun:stun.l.google.com:19302",
+					urls: process.env.REACT_APP_STUN_SERVER_GOOGLE,
 				},
 			],
 		};
